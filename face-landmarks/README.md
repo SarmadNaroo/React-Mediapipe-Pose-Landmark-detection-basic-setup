@@ -1,8 +1,8 @@
-# React + Vite
+## Explanation
+This React component sets up a webcam feed using the `react-webcam` library and processes the video stream using the MediaPipe Pose Detection API (`@mediapipe/pose`). It detects human poses in real-time and draws keypoint landmarks and connections on a canvas overlay.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+1. Clone the repository: `git clone [repository_url]`
+2. Navigate to the project directory: `cd [project_directory]`
+3. Install dependencies: `npm install`
+4. Run the application: `npm start`

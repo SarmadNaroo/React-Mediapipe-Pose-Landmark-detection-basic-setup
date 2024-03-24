@@ -26,7 +26,7 @@ function App() {
     if (typeof webcamRef.current !== "undefined" && webcamRef.current !== null) {
       const camera = new cam.Camera(webcamRef.current.video, {
         onFrame: async () => {
-          await pose.send({image: webcamRef.current.video});
+          await pose.send({ image: webcamRef.current.video });
         },
         width: 640,
         height: 480,
@@ -44,7 +44,7 @@ function App() {
     ctx.drawImage(webcamRef.current.video, 0, 0, canvas.width, canvas.height);
 
     if (results.poseLandmarks) {
-      drawConnectors(ctx, results.poseLandmarks, POSE_CONNECTIONS, {color: '#00FF00', lineWidth: 4});
+      drawConnectors(ctx, results.poseLandmarks, POSE_CONNECTIONS, { color: '#00FF00', lineWidth: 4 });
       results.poseLandmarks.forEach(landmark => {
         ctx.beginPath();
         ctx.arc(landmark.x * canvas.width, landmark.y * canvas.height, 5, 0, 2 * Math.PI);
@@ -55,7 +55,7 @@ function App() {
   };
 
   // Utility function to draw connections
-  function drawConnectors(ctx, landmarks, connections, {color, lineWidth}) {
+  function drawConnectors(ctx, landmarks, connections, { color, lineWidth }) {
     ctx.fillStyle = color;
     ctx.strokeStyle = color;
     ctx.lineWidth = lineWidth;
@@ -74,10 +74,17 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Webcam ref={webcamRef} style={{display: 'none'}} />
-      <canvas ref={canvasRef} style={{position: 'absolute', left: 0, top: 0}} />
+    // <div className="App">
+    //   <Webcam ref={webcamRef} style={{display: 'none'}} />
+    //   <canvas ref={canvasRef} style={{position: 'absolute', left: 0, top: 0}} />
+    // </div>
+    <div className="bg-gray-100 flex justify-center">
+      <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
+        <Webcam ref={webcamRef} style={{display: 'none'}} />
+        <canvas ref={canvasRef} style={{position: 'relative', left: 0, top: 0}} />
+      </div>
     </div>
+
   );
 }
 
